@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/header" />
+            
+    <TextView 	        
+        android:id="@+id/formTitle"
+	    android:text="@string/new_feed"
+	    style="@style/formTitle" />
+   	
+    <TextView         
+        android:text="@string/url"
+        style="@style/label" />
+  
+    <EditText 
+        android:id="@+id/url"
+        android:text="http://"
+        android:inputType="textUri"
+        style="@style/input" 
+        android:imeOptions="actionNext"/> 
+    
+    <TextView         
+        android:text="@string/title"       
+        style="@style/label"
+        android:imeOptions="actionNext" />
+  
+    <EditText 
+        android:id="@+id/title"
+        android:inputType="text"
+        style="@style/input" />      
+   	
+    <TextView         
+        android:text="@string/category"       
+        style="@style/label" />
+    
+    <Spinner
+        android:id="@+id/category"
+        style="@style/input"
+        android:prompt="@string/category_prompt"
+        android:text="@string/category_prompt" />
+    
+    <LinearLayout
+        style="@style/buttonWrapper">
+       
+        <Button 
+            android:text="@string/accept" 
+			android:id="@+id/ok" 
+			style="@style/buttonLeft" />
+        
+        <Button 
+            android:text="@string/cancel" 
+			android:id="@+id/ko" 
+			style="@style/buttonRight" />       
+
+    </LinearLayout>
+    
+</LinearLayout>
