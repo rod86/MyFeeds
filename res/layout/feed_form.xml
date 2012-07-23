@@ -24,13 +24,13 @@
     
     <TextView         
         android:text="@string/title"       
-        style="@style/label"
-        android:imeOptions="actionNext" />
+        style="@style/label" />
   
     <EditText 
         android:id="@+id/title"
         android:inputType="text"
-        style="@style/input" />      
+        style="@style/input"
+        android:imeOptions="actionDone" />      
    	
     <TextView         
         android:text="@string/category"       
@@ -48,12 +48,12 @@
         <Button 
             android:text="@string/accept" 
 			android:id="@+id/ok" 
-			style="@style/buttonLeft" />
+			style="@style/button" />
         
         <Button 
             android:text="@string/cancel" 
 			android:id="@+id/ko" 
-			style="@style/buttonRight" />       
+			style="@style/buttonLast" />       
 
     </LinearLayout>
     

@@ -3,6 +3,7 @@ package com.srm.myfeeds.Activities;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -122,19 +123,34 @@ public class FeedForm extends Activity {
 					Log.d("ERR VAL", "INVALID URL");
 					return;
 				}
-				
-				 
-				//Get title from feed
-				FeedParser parser = new FeedParser(url);
-				String title = parser.getTitle();
-				
-				if (title != null && !title.equals("") && titleText.getText().toString()!=""){
-					titleText.setText(title);
-				}
-		
+								 
+				readTitleTask task = new readTitleTask();
+				task.execute(url);		
 			}
 		}
 	};
+	
+	
+	//Thread that obtains the feed title
+	public class readTitleTask extends AsyncTask<String, Void, String>{
+
+		@Override
+		protected String doInBackground(String... params) {
+			
+			//Get title from feed
+			FeedParser parser = new FeedParser(params[0]);
+			return parser.getTitle();			
+		}
+		
+		@Override
+		protected void onPostExecute(String title){
+			Log.d("machaca:",String.valueOf(titleText.getText().toString().length()));
+			//only put title if the field is empty and the RSS feed has a title
+			if (title != null && !title.equals("") && titleText.getText().toString().length()==0){
+				titleText.setText(title);
+			}
+		}
+	}
     
     
     //onlick event for ok on adding a new feed

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resources>    
+<resources xmlns:android="http://schemas.android.com/apk/res/android">    
     
     <!-- COLORS -->
     <color name="color_light">#F2A043</color>
@@ -139,18 +139,17 @@
          <item name="android:layout_marginRight">10dp</item>         
      </style>
      
-     <style name="buttonLeft">
+     <style name="button">
          <item name="android:layout_width">wrap_content</item>
          <item name="android:layout_height">wrap_content</item>
-         <item name="android:layout_marginRight">10dp</item>
-         <item name="android:minWidth">125dp</item>
+         <item name="android:minWidth">125dp</item>  
+         <item name="android:layout_marginRight">10dp</item>      
+     </style>
+          
+     <style name="buttonLast" parent="button">         
+         <item name="android:layout_marginRight">0dp</item>              
      </style>
      
-     <style name="buttonRight">
-         <item name="android:layout_width">wrap_content</item>
-         <item name="android:layout_height">wrap_content</item>    
-         <item name="android:minWidth">125dp</item>
-     </style>
      
      <!-- FEEDS ENTRIES -->     
      <style name="entryImage">       
