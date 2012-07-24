@@ -97,7 +97,7 @@ public class Utils {
 					Bitmap img = BitmapFactory.decodeStream(is);	
 					img = Utils.getResizedBitmap(img, newHeight, newWidth);
 					is.close();
-				    return new BitmapDrawable(img);
+				    return new BitmapDrawable(null, img);
 				}
 				
 			}catch(IOException e){
